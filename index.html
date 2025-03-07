@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dating App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Dating App</h1>
+    <img id="profile-pic" src="" alt="Profile Picture">
+    <div class="buttons">
+        <button onclick="nextProfile(true)">Yes</button>
+        <button onclick="nextProfile(false)">No</button>
+    </div>
+
+    <script>
+        const profiles = [
+            'https://via.placeholder.com/300?text=Profile+1',
+            'https://via.placeholder.com/300?text=Profile+2',
+            'https://via.placeholder.com/300?text=Profile+3'
+        ];
+        let currentIndex = 0;
+
+        function nextProfile(liked) {
+            console.log(liked ? "Liked!" : "Skipped!");
+            currentIndex++;
+            if (currentIndex >= profiles.length) {
+                alert("No more profiles!");
+                currentIndex = 0;
+            }
+            document.getElementById("profile-pic").src = profiles[currentIndex];
+        }
+
+        document.getElementById("profile-pic").src = profiles[currentIndex];
+    </script>
+</body>
+</html>
