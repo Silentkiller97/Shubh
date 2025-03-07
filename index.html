@@ -37,10 +37,10 @@
 
     <script>
         const profiles = [
-        'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c',  
-        'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg',  
-        'https://randomuser.me/api/portraits/women/44.jpg'  
-    ];
+            'https://randomuser.me/api/portraits/men/32.jpg',
+            'https://randomuser.me/api/portraits/women/44.jpg',
+            'https://picsum.photos/300/300'
+        ];
         let currentIndex = 0;
 
         function nextProfile(liked) {
@@ -53,7 +53,10 @@
             document.getElementById("profile-pic").src = profiles[currentIndex];
         }
 
-        document.getElementById("profile-pic").src = profiles[currentIndex];
+        // Load the first image initially
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("profile-pic").src = profiles[currentIndex];
+        });
     </script>
 </body>
 </html>
